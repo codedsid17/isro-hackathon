@@ -1,0 +1,5 @@
+date,field_id,ndvi,ndwi,vv,vh,rainfall,stress,advisory
+2026-06-01,1,0.30,0.12,-11.2,-16.5,0,moderate,monitor
+2026-06-08,1,0.45,0.09,-10.8,-15.9,12,moderate,monitor
+2026-06-15,1,0.62,0.04,-10.2,-15.0,5,high,irrigate_now
+2026-06-22,1,0.58,0.05,-10.5,-15.2,0,moderate,monitor

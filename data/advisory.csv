@@ -1,0 +1,5 @@
+field_id,crop,stress,advisory
+1,paddy,moderate,monitor
+2,sugarcane,high,irrigate_now
+3,paddy,low,no_irrigation
+4,sugarcane,moderate,monitor

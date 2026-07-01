@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "class": 0,
+        "crop": "paddy",
+        "field_id": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.11, 18.56]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": 1,
+        "crop": "sugarcane",
+        "field_id": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.13, 18.55]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": 0,
+        "crop": "paddy",
+        "field_id": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.15, 18.54]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": 1,
+        "crop": "sugarcane",
+        "field_id": 4
+      },
+      "geometry": {
+        "coordinates": [76.17, 18.53],
+        "type": "Point"
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "crop": "paddy",
+        "class": 0,
+        "pred_class": 0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.10, 18.60],
+            [76.10, 18.54],
+            [76.16, 18.54],
+            [76.16, 18.60],
+            [76.10, 18.60]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "crop": "sugarcane",
+        "class": 1,
+        "pred_class": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.12, 18.58],
+            [76.12, 18.52],
+            [76.18, 18.52],
+            [76.18, 18.58],
+            [76.12, 18.58]
+          ]
+        ]
+      }
+    }
+  ]
+}

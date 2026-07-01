@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO Crop Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+    <div class="header">
+        <h1>AI-Driven Crop Monitoring Dashboard</h1>
+        <p>Pilot Area Prototype</p>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Layers</h2>
+            <button id="cropBtn">Show Crop Map</button>
+            <button id="stressBtn">Show Stress Map</button>
+            <button id="bothBtn">Show Both</button>
+
+            <h2>Status</h2>
+            <p><strong>Crop:</strong> <span id="cropName">Loading...</span></p>
+            <p><strong>Stress:</strong> <span id="stressName">Loading...</span></p>
+            <p><strong>Advisory:</strong> <span id="advisoryName">Loading...</span></p>
+
+            <button id="loadBtn">Load Sample Data</button>
+        </div>
+
+        <div class="main">
+            <div id="map"></div>
+            <div class="chart-box">
+                <h3>Time Series</h3>
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

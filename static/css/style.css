@@ -1,0 +1,349 @@
+/* ============================================================
+   ISRO Crop Monitoring Dashboard — Mission Control theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+    /* Surfaces */
+    --bg-deep: #0A1220;
+    --bg-panel: #101B2D;
+    --bg-panel-raised: #16233A;
+    --bg-main: #EEF2F7;
+    --surface: #FFFFFF;
+
+    /* Borders */
+    --border-dark: #223349;
+    --border-dark-subtle: rgba(93, 214, 196, 0.14);
+    --border-light: #DCE3EC;
+
+    /* Accents */
+    --accent-teal: #2FD1C4;
+    --accent-teal-glow: rgba(47, 209, 196, 0.35);
+    --accent-green: #4CC38A;
+    --accent-amber: #F0A93B;
+    --accent-blue: #4C8DFF;
+
+    /* Text */
+    --text-on-dark: #EAF1F8;
+    --text-on-dark-muted: #8CA0BC;
+    --text-on-light: #16212F;
+    --text-on-light-muted: #5B6B80;
+
+    /* Misc */
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+    --shadow-card: 0 12px 28px rgba(15, 32, 55, 0.10);
+    --shadow-card-hover: 0 16px 34px rgba(15, 32, 55, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-on-light);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Header ---------------- */
+
+.header {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(600px 200px at 88% -20%, rgba(47, 209, 196, 0.25), transparent 70%),
+        linear-gradient(135deg, #0A1220 0%, #101B2D 60%, #0D1830 100%);
+    color: var(--text-on-dark);
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border-dark-subtle);
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(47, 209, 196, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(47, 209, 196, 0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.9), transparent 85%);
+    pointer-events: none;
+}
+
+.header h1 {
+    position: relative;
+    margin: 0;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+}
+
+.header p {
+    position: relative;
+    margin: 6px 0 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+}
+
+/* ---------------- Layout shell ---------------- */
+
+.container {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+/* ---------------- Sidebar ---------------- */
+
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--bg-panel);
+    color: var(--text-on-dark);
+    padding: 22px 20px;
+    border-right: 1px solid var(--border-dark-subtle);
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin: 0 0 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-muted);
+}
+
+.sidebar h2:not(:first-of-type) {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar h2:nth-of-type(2)::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 0 3px rgba(76, 195, 138, 0.25);
+    animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(76, 195, 138, 0.25); }
+    50% { box-shadow: 0 0 0 6px rgba(76, 195, 138, 0.05); }
+}
+
+.sidebar button {
+    margin-top: 10px;
+    padding: 11px 14px;
+    border: 1px solid var(--border-dark-subtle);
+    background: var(--bg-panel-raised);
+    color: var(--text-on-dark);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: block;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    text-align: left;
+    letter-spacing: 0.01em;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.sidebar button:first-of-type {
+    margin-top: 4px;
+}
+
+.sidebar button:hover {
+    background: #1C2C46;
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 1px var(--accent-teal-glow);
+}
+
+.sidebar button:active {
+    transform: translateY(1px);
+}
+
+.sidebar button:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
+}
+
+#cropBtn { border-left: 3px solid var(--accent-green); }
+#stressBtn { border-left: 3px solid var(--accent-amber); }
+#bothBtn { border-left: 3px solid var(--accent-blue); }
+
+#loadBtn {
+    margin-top: 28px;
+    background: linear-gradient(135deg, var(--accent-teal), #22A99E);
+    color: #05201C;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 6px 16px rgba(47, 209, 196, 0.28);
+}
+
+#loadBtn:hover {
+    background: linear-gradient(135deg, #3EE0D2, var(--accent-teal));
+    box-shadow: 0 8px 20px rgba(47, 209, 196, 0.4);
+}
+
+/* Status readout */
+
+.sidebar p {
+    margin: 10px 0;
+    padding: 10px 12px;
+    background: var(--bg-panel-raised);
+    border: 1px solid var(--border-dark-subtle);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar p strong {
+    color: var(--text-on-dark-muted);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.sidebar p span {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent-teal);
+    font-weight: 500;
+    text-align: right;
+}
+
+/* ---------------- Main content ---------------- */
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+#map {
+    position: relative;
+    flex: 1;
+    min-height: 400px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    background: var(--surface);
+    isolation: isolate;
+}
+
+#map::before,
+#map::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+    z-index: 500;
+    border-color: var(--accent-teal);
+    border-style: solid;
+    opacity: 0.85;
+}
+
+#map::before {
+    top: 10px;
+    left: 10px;
+    border-width: 2px 0 0 2px;
+    border-top-left-radius: 4px;
+}
+
+#map::after {
+    bottom: 10px;
+    right: 10px;
+    border-width: 0 2px 2px 0;
+    border-bottom-right-radius: 4px;
+}
+
+.chart-box {
+    background: var(--surface);
+    padding: 16px 18px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.chart-box h3 {
+    margin: 0 0 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-on-light-muted);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.chart-box canvas {
+    max-width: 100%;
+}
+
+/* ---------------- Scrollbar (webkit) ---------------- */
+
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--bg-panel-raised);
+    border-radius: 4px;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 860px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-dark-subtle);
+    }
+
+    .main {
+        min-height: 70vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar h2:nth-of-type(2)::before {
+        animation: none;
+    }
+    .sidebar button,
+    #loadBtn {
+        transition: none;
+    }
+}
